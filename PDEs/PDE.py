@@ -7,7 +7,7 @@ from Enums import TrainMode
 # Base neural network PDE solver class
 class PDENeuralNetwork:
     def __init__(self, domain=None, network=None):
-        self.lossWeight = tf.placeholder(tf.float64, name="lossWeight")
+        self.lossWeight = tf.compat.v1.placeholder(tf.float64, name="lossWeight")
 
         self.domain = domain.copy()
         self.network = network

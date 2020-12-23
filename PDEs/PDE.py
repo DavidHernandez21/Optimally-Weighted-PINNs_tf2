@@ -181,7 +181,8 @@ class PDENeuralNetwork:
                                  iterations=iterations,
                                  fetchList=self.fetchListValidate,
                                  customCallback=customCallback)
-
+    
+    @tf.function
     def __TrainRegular(self, lossFunction, interiorPointCount, boundaryPointCount, iterations, lossWeight=None,
                        fetchList=None, customCallback=None):
         if customCallback is None:
@@ -195,7 +196,8 @@ class PDENeuralNetwork:
                                    lossWeight=lossWeight)
 
         self.network.Train(lossFunction, iterations, feedDict, fetchList, callback)
-
+    
+    @tf.function
     def __TrainValidate(self, lossFunction, interiorPointCount, boundaryPointCount, iterations, lossWeight=None,
                         fetchList=None, customCallback=None):
         if customCallback is None:

@@ -22,10 +22,10 @@ class NeuralNetwork:
         self.xIntValidate = []
         self.xBoundValidate = []
         for i in range(inputDimension):
-            self.xInt.append(tf.placeholder(tf.float64, shape=[None, 1], name="xInt" + str(i)))
-            self.xBound.append(tf.placeholder(tf.float64, shape=[None, 1], name="xBound" + str(i)))
-            self.xIntValidate.append(tf.placeholder(tf.float64, shape=[None, 1], name="xIntValidate" + str(i)))
-            self.xBoundValidate.append(tf.placeholder(tf.float64, shape=[None, 1], name="xBoundValidate" + str(i)))
+            self.xInt.append(tf.compat.v1.placeholder(tf.float64, shape=[None, 1], name="xInt" + str(i)))
+            self.xBound.append(tf.compat.v1.placeholder(tf.float64, shape=[None, 1], name="xBound" + str(i)))
+            self.xIntValidate.append(tf.compat.v1.placeholder(tf.float64, shape=[None, 1], name="xIntValidate" + str(i)))
+            self.xBoundValidate.append(tf.compat.v1.placeholder(tf.float64, shape=[None, 1], name="xBoundValidate" + str(i)))
 
         # Outputs
         self.yInt = self.CreateGraph(self.xInt, activationFunction)
@@ -34,10 +34,10 @@ class NeuralNetwork:
         self.yBoundValidate = self.CreateGraph(self.xBoundValidate, activationFunction)
 
         # Boundary condition & Source functions
-        self.boundaryCondition = tf.placeholder(tf.float64, shape=[None, 1], name="BoundaryCondition")
-        self.boundaryConditionValidate = tf.placeholder(tf.float64, shape=[None, 1], name="BoundaryConditionValidate")
-        self.sourceFunction = tf.placeholder(tf.float64, shape=[None, 1], name="SourceFunction")
-        self.sourceFunctionValidate = tf.placeholder(tf.float64, shape=[None, 1], name="SourceFunctionValidate")
+        self.boundaryCondition = tf.compat.v1.placeholder(tf.float64, shape=[None, 1], name="BoundaryCondition")
+        self.boundaryConditionValidate = tf.compat.v1.placeholder(tf.float64, shape=[None, 1], name="BoundaryConditionValidate")
+        self.sourceFunction = tf.compat.v1.placeholder(tf.float64, shape=[None, 1], name="SourceFunction")
+        self.sourceFunctionValidate = tf.compat.v1.placeholder(tf.float64, shape=[None, 1], name="SourceFunctionValidate")
 
         self.saver = tf.train.Saver()
 

@@ -41,7 +41,7 @@ class NeuralNetwork:
         self.sourceFunction = tf.compat.v1.placeholder(tf.float64, shape=[None, 1], name="SourceFunction")
         self.sourceFunctionValidate = tf.compat.v1.placeholder(tf.float64, shape=[None, 1], name="SourceFunctionValidate")
 
-        self.saver = tf.train.Saver()
+        self.saver = tf.compat.v1.train.Saver()
 
         self.session = tf.Session()
         self.session.run(tf.global_variables_initializer())

@@ -1,5 +1,6 @@
-import tensorflow as tf
+import tensorflow_probability as tfp
 from functools import wraps
+import time
 
 
 def make_val_and_grad_fn(value_fn):

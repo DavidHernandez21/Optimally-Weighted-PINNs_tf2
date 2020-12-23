@@ -59,7 +59,7 @@ class NeuralNetwork:
 
     @staticmethod
     def GlorotInitializer(dim1, dim2):
-        return tf.random_uniform([dim1, dim2],
+        return tf.random.uniform([dim1, dim2],
                                  minval=- np.sqrt(6 / (dim1 + dim2)),
                                  maxval=np.sqrt(6 / (dim1 + dim2)), dtype=tf.float64)
 

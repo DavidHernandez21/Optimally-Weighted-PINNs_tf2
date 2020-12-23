@@ -2,6 +2,8 @@ import tensorflow as tf
 import numpy as np
 from Enums import ActivationFunction
 
+tf.compat.v1.disable_v2_behavior()
+
 
 # Neural network class
 class NeuralNetwork:

@@ -44,7 +44,7 @@ class NeuralNetwork:
         self.saver = tf.compat.v1.train.Saver()
 
         self.session = tf.compat.v1.Session()
-        self.session.run(tf.global_variables_initializer())
+        self.session.run(tf.compat.v1.global_variables_initializer())
 
     def CreateNetworkParameters(self):
         weights = []

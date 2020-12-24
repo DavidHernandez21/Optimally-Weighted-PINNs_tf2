@@ -32,7 +32,7 @@ def main():
     fig = plt.figure()
     ax = fig.gca(projection='3d')
     x, y, z = laplace.GetInteriorPlotData(pointCount=5000, tensor=network.yInt, x=[(0, 1), (0, 1)])
-    print("x: {}\ny: {}\nz: {}".format(x, y, z))
+#     print("x: {}\ny: {}\nz: {}".format(x, y, z))
     ax.plot_surface(x, y, z, cmap='viridis')
     ax.set_xlabel("$x_1$")
     ax.set_ylabel("$x_2$")
